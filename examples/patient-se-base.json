@@ -1,0 +1,32 @@
+{
+  "resourceType": "Patient",
+  "meta": {
+    "profile": [
+      "http://hl7.se/fhir/ig/base/StructureDefinition/SEBasePatient"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://electronichealth.se/identifier/personnummer",
+      "value": "19121212-1212"
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "family": "Svensson",
+      "given": ["Erik", "Lars"]
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1912-12-12",
+  "address": [
+    {
+      "use": "home",
+      "line": ["Storgatan 1"],
+      "city": "Stockholm",
+      "postalCode": "111 22",
+      "country": "SE"
+    }
+  ]
+}

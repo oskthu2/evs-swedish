@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  matchbox:
+    image: europe-west6-docker.pkg.dev/ahdis-ch/ahdis/matchbox:latest
+    container_name: gazelle-evs-swedish
+    user: "0:0"  # Run as root to avoid permission issues with Docker volumes
+    ports:
+      - "8080:8080"
+    volumes:
+      # Mount our configuration (application.yaml with Swedish IG references)
+      - ./config:/config
+      # Persist the H2 database so IGs aren't re-downloaded on every restart
+      - matchbox-data:/matchbox/data
+    environment:
+      # Give the JVM enough memory – 2.5 GB+ recommended when loading IGs
+      - JAVA_TOOL_OPTIONS=-Xmx2g -Xms1g
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/matchboxv3/fhir/metadata"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 120s   # IGs take a while to load on first boot
+
+volumes:
+  matchbox-data:

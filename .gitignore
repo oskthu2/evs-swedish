@@ -1,0 +1,13 @@
+# Matchbox persistent data
+data/
+
+# Docker volumes (if bind-mounted instead of named volume)
+matchbox-data/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/

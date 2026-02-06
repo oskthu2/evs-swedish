@@ -1,0 +1,25 @@
+{
+  "resourceType": "Organization",
+  "meta": {
+    "profile": [
+      "http://hl7.se/fhir/ig/base/StructureDefinition/SEBaseOrganization"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "urn:oid:2.5.4.97",
+      "value": "SE5565594230-B001"
+    }
+  ],
+  "active": true,
+  "name": "Karolinska Universitetssjukhuset",
+  "address": [
+    {
+      "use": "work",
+      "line": ["Eugeniavägen 3"],
+      "city": "Solna",
+      "postalCode": "171 64",
+      "country": "SE"
+    }
+  ]
+}
