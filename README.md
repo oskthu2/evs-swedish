@@ -1,10 +1,10 @@
-# Gazelle EVS – Swedish FHIR Base Profiles Validator
+# Swedish FHIR Base Profiles Validator
 
-A Docker-based local FHIR validation service for the [HL7 Sweden Base Profiles](http://hl7.se/fhir/ig/base/), powered by [Matchbox](https://github.com/ahdis/matchbox) — the same FHIR validation engine used by the [IHE Gazelle EVS Client](https://gazelle.ihe.net/content/evsfhirvalidation).
+This project brings nothing new to the table. It's just me learing how to seet up a Docker-based local FHIR validation service for the [HL7 Sweden Base Profiles](http://hl7.se/fhir/ig/base/), powered by [Matchbox](https://github.com/ahdis/matchbox), which is the same FHIR validation engine used by the [IHE Gazelle EVS Client](https://gazelle.ihe.net/content/evsfhirvalidation).
 
 ## Background
 
-The Gazelle EVS Client is a complex Java EE application that requires Wildfly, PostgreSQL, SSO, and many co-deployed services. Running it standalone is impractical for most use-cases.
+I initially set out to install my own copy of the Gazelle EVS Client, but it is a complex Java EE application that requires Wildfly, PostgreSQL, SSO, and many co-deployed services. Running it standalone seemed impractical for my use-cases.
 
 **Matchbox** is a standalone open-source FHIR server (by [ahdis](https://www.ahdis.ch/)) built on HAPI FHIR. It provides:
 
@@ -13,7 +13,7 @@ The Gazelle EVS Client is a complex Java EE application that requires Wildfly, P
 - **Gazelle EVS API** compatibility (`/gazelle/validation/validate`)
 - Pre-loading of any **FHIR Implementation Guide** from the package registry
 
-This repository pre-configures Matchbox with the **Swedish Base Profiles IG** (`hl7se.fhir.base` v1.1.0) so you can validate FHIR resources for conformance to the Swedish national profiles.
+This repository has then pre-configures Matchbox to use the **Swedish Base Profiles IG** (`hl7se.fhir.base` v1.1.0) so you can validate FHIR resources for conformance to the Swedish national profiles. As more IG:s are published, the tool could ingest them as well. 
 
 ## Quick start
 
